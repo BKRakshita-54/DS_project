@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="card">
+    <h1>Result</h1>
+
+    <h3>{{ subject }}</h3>
+    <div class="result">Score: {{ prediction }}</div>
+
+    <p>{{ explanation }}</p>
+
+    <h3>Suggestions</h3>
+    <ul>
+        {% for s in suggestions %}
+        <li>{{ s }}</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Contribution to Final Score</h3>
+    <ul>
+        {% for k,v in contributions.items() %}
+        <li>
+            {{ k }} :
+            {% if v > 0 %}
+                <span style="color:green;">+{{ v }}</span>
+            {% else %}
+                <span style="color:red;">{{ v }}</span>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+
+    <a href="/" class="link">⬅ Back</a>
+</div>
+
+</body>
+</html>

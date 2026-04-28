@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="card">
+    <h1>Student Learning Analyzer</h1>
+    <p class="subtitle">Predict performance & understand learning behavior</p>
+
+    <form action="/predict" method="post" class="form-grid">
+
+        <div class="input-box">
+            <label>Subject</label>
+            <input type="text" name="subject" required>
+        </div>
+
+        <div class="input-box">
+            <label>Credits</label>
+            <input type="number" name="credits" min="2" max="5" required>
+            <small>2–5</small>
+        </div>
+
+        <div class="input-box">
+            <label>Study Time</label>
+            <input type="number" name="studytime" min="1" max="4" required>
+            <small>1–4</small>
+        </div>
+
+        <div class="input-box">
+            <label>Absences</label>
+            <input type="number" name="absences" min="0" max="30" required>
+            <small>0–30</small>
+        </div>
+
+        <div class="input-box">
+            <label>Failures</label>
+            <input type="number" name="failures" min="0" max="3" required>
+            <small>0–3</small>
+        </div>
+
+        <div class="input-box">
+            <label>Interest</label>
+            <select name="interest" required>
+                <option value="1">Dislike</option>
+                <option value="2">Neutral</option>
+                <option value="3">Like</option>
+            </select>
+            <small>1–3</small>
+        </div>
+
+        <div class="input-box">
+            <label>Internal 1</label>
+            <input type="number" name="internal1" min="0" max="100" required>
+        </div>
+
+        <div class="input-box">
+            <label>Internal 2</label>
+            <input type="number" name="internal2" min="0" max="100" required>
+        </div>
+
+    </form>
+
+    <button onclick="document.forms[0].submit()">Predict</button>
+
+    <div class="links">
+        <a href="/analysis">View Dataset</a>
+        <a href="/explain">View Relations</a>
+    </div>
+
+</div>
+
+</body>
+</html>
